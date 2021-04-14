@@ -96,7 +96,8 @@ public class Main {
 		if (opc != 0) {
 			if (opc == 1) {
 				//System.out.println(lineal.code(fuente.code(mensaje)));
-				System.out.println("La codificación no está implementada todavía");
+				System.out.println(alfabeto.cifrar(mensaje));
+				//System.out.println("La codificación no está implementada todavía");
 			}
 			else if (opc == 2) {
 				System.out.println(alfabeto.descifrar(mensaje));

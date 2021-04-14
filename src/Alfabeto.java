@@ -89,6 +89,17 @@ public class Alfabeto {
 		return this.alfabeto.get(num2);
 	}
 	
+	private String cifrarLetra(char letra, Clave clave) {
+			
+		int num1, num2;
+		
+		num1 = letraToNum(String.valueOf(letra));
+		num2 = encriptar(num1,clave);
+		
+		return this.alfabeto.get(num2);
+	}
+	
+	
 	private int letraToNum(String letra) {
 		for(int i=0; i<this.alfabeto.size(); i++) {
 			if(alfabeto.get(i).equals(letra)) {
@@ -102,6 +113,37 @@ public class Alfabeto {
 		
 		return Clave.mod(num*clave.getA() + clave.getB());
 		
+	}
+	
+	private int encriptar(int num, Clave clave) {
+		
+		return Clave.mod(num*clave.getA() + clave.getB());
+		
+	}
+	
+	public String cifrar(String mensaje) {
+
+		//int contador = 1;
+		StringBuilder cadenafinal = new StringBuilder("");
+		char letra;
+		String letraCifrada;
+		
+		for(int i=0; i<mensaje.length(); i++) {
+			
+//			if(cadenafinal.length()>=2) {
+//				if(cadenafinal.substring(cadenafinal.length()-2, cadenafinal.length()).equals("  ")) {
+//					contador++;
+//					cadenafinal = new StringBuilder(cadenafinal.substring(0, cadenafinal.length()-2) + "\n");
+//				}
+//			}
+			
+			letra = mensaje.charAt(i);
+			letraCifrada = cifrarLetra(letra, claveCifrado);//obtenerClave(contador));
+			cadenafinal.append(letraCifrada);
+			
+		}
+		
+		return cadenafinal.toString();
 	}
 
 }

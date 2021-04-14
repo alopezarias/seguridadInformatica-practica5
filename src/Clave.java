@@ -5,10 +5,10 @@ public class Clave {
 	private int b;
 	private static int mod;
 	
-	public Clave(int a, int b, int mod) {
+	public Clave(int a, int b, int module) {
 		this.a = a;
 		this.b = b;
-		this.mod = mod;
+		mod = module;
 	}
 	
 	public int getA() {
